@@ -19,3 +19,23 @@ def display_model_info(model_name, n_estimators, accuracy):
     print(f"Nombre: {model_name}")
     print(f"Número de estimadores: {n_estimators}")
     print(f"Precisión: {accuracy:.2%}")
+
+def check_model_quality(accuracy, min_accuracy=0.7, min_estimators=50):
+    """
+    Verifica si el modelo cumple con criterios mínimos de calidad.
+    
+    Args:
+        accuracy (float): Precisión del modelo
+        min_accuracy (float): Precisión mínima aceptable (default: 0.7)
+        min_estimators (int): Número mínimo de estimadores (default: 50)
+    
+    Returns:
+        dict: Diccionario con el estado de cada criterio
+    """
+    quality_metrics = {
+        "cumple_precision": accuracy >= min_accuracy,
+        "precision_actual": accuracy,
+        "precision_minima": min_accuracy
+    }
+    
+    return quality_metrics
