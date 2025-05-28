@@ -16,3 +16,5 @@ def prepare_data(df):
     
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
     return X_train, X_test, y_train, y_test
+
+#Updated file to include the prepare_data function
